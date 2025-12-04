@@ -1,0 +1,12 @@
+pi_m2_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: pi_m2_user
+      password: pi_m2_pass
+      port: 5432
+      dbname: pi_m2_db
+      schema: dbt_dev
+      threads: 1

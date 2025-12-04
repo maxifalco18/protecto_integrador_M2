@@ -1,0 +1,22 @@
+
+name: 'pi_m2_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'pi_m2_dbt'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by 'dbt clean'
+  - "target"
+  - "dbt_packages"
+
+models:
+  pi_m2_dbt:
+    # Configuración global para modelos
+    materialized: view
