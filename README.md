@@ -83,4 +83,3 @@ dbt docs serve
 - **Testing**: Se agregaron tests de unicidad (`unique`), no nulos (`not_null`) e integridad referencial (`relationships`) para asegurar la calidad de los datos en la capa final.
 
 ---
-*Proyecto realizado por [Tu Nombre] para Henry.*
