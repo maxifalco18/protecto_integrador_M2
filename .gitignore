@@ -6,3 +6,6 @@ __pycache__/
 dbt_packages/
 target/
 logs/
+DB Proyecto/
+*.csv
+
