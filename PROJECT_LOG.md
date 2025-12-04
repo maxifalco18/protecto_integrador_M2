@@ -14,8 +14,8 @@ Rama Actual: **dev**
 - [x] Análisis exploratorio de archivos en `DB Proyecto`
 - [x] Creación de script de carga (Python/SQL) para capa RAW
 - [x] Ejecución de carga de datos
-- [ ] Reporte de calidad de datos (Nulos, Duplicados)
-- [ ] **MERGE A MAIN (Fin Fase 1)**
+- [x] Reporte de calidad de datos (Nulos, Duplicados)
+- [x] **MERGE A MAIN (Fin Fase 1)**
 
 ## FASE 2: Modelado Dimensional
 - [ ] Definición de Bus Matrix (Hechos y Dimensiones)
