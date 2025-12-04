@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Datos crudos cargados desde archivos CSV"
+    database: pi_m2_db
+    schema: public
+    tables:
+      - name: usuarios
+        description: "Información de usuarios registrados"
+        columns:
+          - name: usuarioid
+            tests:
+              - unique
+              - not_null
+      
+      - name: categorias
+        description: "Categorías de productos"
+        columns:
+          - name: categoriaid
+            tests:
+              - unique
+              - not_null
+
+      - name: productos
+        description: "Catálogo de productos"
+        columns:
+          - name: productoid
+            tests:
+              - unique
+              - not_null
+          - name: categoriaid
+            tests:
+              - relationships:
+                  to: source('raw', 'categorias')
+                  field: categoriaid
+
+      - name: ordenes
+        description: "Cabecera de órdenes de compra"
+        columns:
+          - name: ordenid
+            tests:
+              - unique
+              - not_null
+          - name: usuarioid
+            tests:
+              - relationships:
+                  to: source('raw', 'usuarios')
+                  field: usuarioid
+
+      - name: detalleordenes
+        description: "Detalle de productos por orden"
+        columns:
+          - name: detalleid
+            tests:
+              - unique
+              - not_null
+          - name: ordenid
+            tests:
+              - relationships:
+                  to: source('raw', 'ordenes')
+                  field: ordenid
+          - name: productoid
+            tests:
+              - relationships:
+                  to: source('raw', 'productos')
+                  field: productoid
+
+      - name: metodospago
+        description: "Métodos de pago disponibles"
+        columns:
+          - name: metodopagoid
+            tests:
+              - unique
+              - not_null

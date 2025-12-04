@@ -21,12 +21,12 @@ Rama Actual: **dev**
 - [x] Definición de Bus Matrix (Hechos y Dimensiones)
 - [x] Diseño de Diagrama ER
 - [x] Definición de estrategias SCD
-- [ ] **MERGE A MAIN (Fin Fase 2)**
+- [x] **MERGE A MAIN (Fin Fase 2)**
 
 ## FASE 3: Implementación DBT
-- [ ] Inicializar proyecto DBT
-- [ ] Configurar `profiles.yml` y `sources.yml`
-- [ ] Modelos Staging (Clean & Cast)
+- [x] Inicializar proyecto DBT
+- [x] Configurar `profiles.yml` y `sources.yml`
+- [x] Modelos Staging (Clean & Cast)
 - [ ] Modelos Intermediate (Joins & Logic)
 - [ ] Modelos Marts (Facts & Dims)
 - [ ] **MERGE A MAIN (Fin Fase 3)**
