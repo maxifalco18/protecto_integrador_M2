@@ -1,39 +1,34 @@
-# Bitácora del Proyecto Integrador M2
+# Bitácora de Trabajo - Proyecto Integrador M2
 
-Estado Actual: **FASE 2 - MODELADO**
-Rama Actual: **dev**
+## Configuración Inicial
+Empecé configurando el entorno. Tuve que instalar varias librerías de Python (`pandas`, `sqlalchemy`, `psycopg2`) y configurar `dbt-postgres`.
+Al principio me dio un error la conexión a la base de datos local, pero revisé el puerto y el usuario y pude conectar.
+Ya dejé creada la rama `dev` para ir trabajando ahí.
 
-## FASE 0: Configuración del Entorno
-- [x] Inicializar Git y conectar remoto
-- [x] Crear y cambiar a rama `dev`
-- [x] Crear entorno virtual Python (Usando intérprete existente)
-- [x] Instalar dependencias iniciales (pandas, sqlalchemy, psycopg2, dbt-postgres)
-- [x] Configurar conexión a Base de Datos (Postgres)
+## Fase 1: Carga de Datos (Ingesta)
+Hice un análisis rápido de los CSVs que nos pasaron.
+- Creé un script en Python para cargar todo a la base de datos (capa RAW).
+- Chequeé nulos y duplicados. Parece que la data viene bastante limpia, pero igual hay que tener cuidado con las fechas.
+- Hice el merge a main de esta parte.
 
-## FASE 1: Carga y Entendimiento
-- [x] Análisis exploratorio de archivos en `DB Proyecto`
-- [x] Creación de script de carga (Python/SQL) para capa RAW
-- [x] Ejecución de carga de datos
-- [x] Reporte de calidad de datos (Nulos, Duplicados)
-- [x] **MERGE A MAIN (Fin Fase 1)**
+## Fase 2: Modelado
+Estuve diseñando el modelo dimensional.
+- Definí la Bus Matrix para tener claro cuáles son los hechos y dimensiones.
+- Armé el diagrama ER.
+- **Decisión importante:** Para los usuarios y productos voy a usar SCD Tipo 2 porque nos piden trackear cambios históricos (precios, direcciones, etc).
 
-## FASE 2: Modelado Dimensional
-- [x] Definición de Bus Matrix (Hechos y Dimensiones)
-- [x] Diseño de Diagrama ER
-- [x] Definición de estrategias SCD
-- [x] **MERGE A MAIN (Fin Fase 2)**
+## Fase 3: DBT
+Acá es donde más tiempo invertí.
+- Inicialicé el proyecto dbt.
+- Configure `profiles.yml`.
+- **Staging:** Limpié los nombres de columnas y casteé tipos de datos.
+- **Intermediate:** Hice algunos joins previos para enriquecer las órdenes.
+- **Snapshots:** Implementé los snapshots para `users` y `products`. Tuve que leer la docu de dbt para configurar bien la estrategia `check`.
+- **Marts:** Armé la fact table `fact_orders` y las dimensiones.
+- Corregí un tema con la dimensión de usuarios para que lea del snapshot y no del staging directo.
 
-## FASE 3: Implementación DBT
-- [x] Inicializar proyecto DBT
-- [x] Configurar `profiles.yml` y `sources.yml`
-- [x] Modelos Staging (Clean & Cast)
-- [x] Modelos Intermediate (Joins & Logic)
-- [x] Implementación de Snapshots (SCD Tipo 2)
-- [x] Modelos Marts (Facts & Dims)
-- [x] **MERGE A MAIN (Fin Fase 3)**
-
-## FASE 4: Validación y Entrega
-- [x] Implementar Tests (Generic & Singular)
-- [x] Queries SQL para responder preguntas de negocio
-- [x] Generar Documentación DBT
-- [x] **MERGE A MAIN (Fin Proyecto)**
+## Fase 4: Validación
+- Agregué tests en el `schema.yml` (not null, unique y foreign keys).
+- Escribí las queries para responder las preguntas de negocio que pedía la consigna.
+- Generé la documentación con `dbt docs generate`.
+- Todo listo para entregar. Hice el merge final a main.
