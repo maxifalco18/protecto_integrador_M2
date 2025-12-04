@@ -28,11 +28,12 @@ Rama Actual: **dev**
 - [x] Configurar `profiles.yml` y `sources.yml`
 - [x] Modelos Staging (Clean & Cast)
 - [x] Modelos Intermediate (Joins & Logic)
+- [x] Implementación de Snapshots (SCD Tipo 2)
 - [x] Modelos Marts (Facts & Dims)
 - [x] **MERGE A MAIN (Fin Fase 3)**
 
 ## FASE 4: Validación y Entrega
-- [ ] Implementar Tests (Generic & Singular)
-- [ ] Generar Documentación DBT
-- [ ] Queries SQL para responder preguntas de negocio
-- [ ] **MERGE A MAIN (Fin Proyecto)**
+- [x] Implementar Tests (Generic & Singular)
+- [x] Queries SQL para responder preguntas de negocio
+- [x] Generar Documentación DBT
+- [x] **MERGE A MAIN (Fin Proyecto)**
