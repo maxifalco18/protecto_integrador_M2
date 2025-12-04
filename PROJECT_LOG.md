@@ -1,6 +1,6 @@
 # Bitácora del Proyecto Integrador M2
 
-Estado Actual: **FASE 0 - INICIO**
+Estado Actual: **FASE 2 - MODELADO**
 Rama Actual: **dev**
 
 ## FASE 0: Configuración del Entorno
@@ -18,9 +18,9 @@ Rama Actual: **dev**
 - [x] **MERGE A MAIN (Fin Fase 1)**
 
 ## FASE 2: Modelado Dimensional
-- [ ] Definición de Bus Matrix (Hechos y Dimensiones)
-- [ ] Diseño de Diagrama ER
-- [ ] Definición de estrategias SCD
+- [x] Definición de Bus Matrix (Hechos y Dimensiones)
+- [x] Diseño de Diagrama ER
+- [x] Definición de estrategias SCD
 - [ ] **MERGE A MAIN (Fin Fase 2)**
 
 ## FASE 3: Implementación DBT
