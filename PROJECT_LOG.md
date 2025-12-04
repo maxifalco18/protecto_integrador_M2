@@ -27,9 +27,9 @@ Rama Actual: **dev**
 - [x] Inicializar proyecto DBT
 - [x] Configurar `profiles.yml` y `sources.yml`
 - [x] Modelos Staging (Clean & Cast)
-- [ ] Modelos Intermediate (Joins & Logic)
-- [ ] Modelos Marts (Facts & Dims)
-- [ ] **MERGE A MAIN (Fin Fase 3)**
+- [x] Modelos Intermediate (Joins & Logic)
+- [x] Modelos Marts (Facts & Dims)
+- [x] **MERGE A MAIN (Fin Fase 3)**
 
 ## FASE 4: Validación y Entrega
 - [ ] Implementar Tests (Generic & Singular)

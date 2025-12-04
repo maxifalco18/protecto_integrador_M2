@@ -73,3 +73,17 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: ordenesmetodospago
+        description: "Relación entre órdenes y métodos de pago"
+        columns:
+          - name: ordenid
+            tests:
+              - relationships:
+                  to: source('raw', 'ordenes')
+                  field: ordenid
+          - name: metodopagoid
+            tests:
+              - relationships:
+                  to: source('raw', 'metodospago')
+                  field: metodopagoid
