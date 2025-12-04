@@ -11,9 +11,9 @@ Rama Actual: **dev**
 - [x] Configurar conexión a Base de Datos (Postgres)
 
 ## FASE 1: Carga y Entendimiento
-- [ ] Análisis exploratorio de archivos en `DB Proyecto`
-- [ ] Creación de script de carga (Python/SQL) para capa RAW
-- [ ] Ejecución de carga de datos
+- [x] Análisis exploratorio de archivos en `DB Proyecto`
+- [x] Creación de script de carga (Python/SQL) para capa RAW
+- [x] Ejecución de carga de datos
 - [ ] Reporte de calidad de datos (Nulos, Duplicados)
 - [ ] **MERGE A MAIN (Fin Fase 1)**
 
