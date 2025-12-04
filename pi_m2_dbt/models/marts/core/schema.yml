@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Tabla de hechos de órdenes de compra"
+    columns:
+      - name: order_item_id
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+      - name: date_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_id
+
+  - name: dim_users
+    description: "Dimensión de usuarios con historia (SCD Tipo 2)"
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Dimensión de productos con historia (SCD Tipo 2)"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    description: "Dimensión de tiempo"
+    columns:
+      - name: date_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_payment_methods
+    description: "Dimensión de métodos de pago"
+    columns:
+      - name: payment_method_id
+        tests:
+          - unique
+          - not_null
